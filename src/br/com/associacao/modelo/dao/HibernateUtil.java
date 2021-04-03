@@ -8,6 +8,7 @@ package br.com.associacao.modelo.dao;
 
 import br.com.associacao.modelo.Cliente;
 import br.com.associacao.modelo.Endereco;
+import br.com.associacao.modelo.Fornecedor;
 import br.com.associacao.modelo.Funcionario;
 import br.com.associacao.modelo.Pessoa;
 import org.hibernate.HibernateException;
@@ -33,6 +34,7 @@ public class HibernateUtil {
             cfg.addAnnotatedClass(Funcionario.class);
             cfg.addAnnotatedClass(Endereco.class);
             cfg.addAnnotatedClass(Cliente.class);
+            cfg.addAnnotatedClass(Fornecedor.class);
         
 
             cfg.configure("/br/com/associacao/modelo/dao/hibernate.cfg.xml");

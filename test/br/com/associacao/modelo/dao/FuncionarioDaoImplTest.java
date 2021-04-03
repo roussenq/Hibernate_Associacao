@@ -32,7 +32,7 @@ public class FuncionarioDaoImplTest {
         funcionarioDao = new FuncionarioDaoImpl();
     }
 
-    @Test
+    //@Test
     public void testSalvarFuncionario() {
         System.out.println("Salvar Funcionario");
         funcionario = new Funcionario(
@@ -65,7 +65,7 @@ public class FuncionarioDaoImplTest {
         assertNotNull(funcionario.getId());
         assertNotNull(endereco.getId());
     }
-    @Test
+    //@Test
     public void testPesquisarFuncionarioPorNome() {
         System.out.println("Funcionario pesquisar Por Nome");
         
@@ -94,16 +94,16 @@ public class FuncionarioDaoImplTest {
         Funcionario funcionarioNovo = funcionarioDao.pesquisarPorId(funcionario.getId(), sessao);
         
         sessao.close();
-        assertEquals(funcionarioNovo.getNome(),funcionario.getNome());
-        assertEquals(funcionarioNovo.getEmail(),funcionario.getEmail());
+        assertEquals(funcionario.getNome(),funcionarioNovo.getNome());
+        assertEquals(funcionario.getEmail(),funcionarioNovo.getEmail());
     }
 
-    @Test
+    //@Test
     public void testPesquisarPorId() {
         System.out.println("pesquisarPorId");
     }
     
-    @Test
+    //@Test
     public void testExcluirFuncionario() {
         System.out.println("Excluir Funcionario");
         

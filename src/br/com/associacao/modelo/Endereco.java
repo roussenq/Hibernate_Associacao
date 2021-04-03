@@ -32,12 +32,16 @@ public class Endereco implements Serializable {
     private String numero;
     private String complemento;
     
+    
     @OneToOne()
     @JoinColumn(name = "id_funcionario")
     private Funcionario funcionario;
     @OneToOne()
     @JoinColumn(name = "id_pessoa")
     private Cliente cliente;
+    @ManyToOne
+    @JoinColumn(name = "id_fornecedor")
+    private Fornecedor fornecedor;
     
     public Endereco() {
     }
@@ -124,6 +128,15 @@ public class Endereco implements Serializable {
         this.cliente = cliente;
     }
 
+    public Fornecedor getFornecedor() {
+        return fornecedor;
+    }
+
+    public void setFornecedor(Fornecedor fornecedor) {
+        this.fornecedor = fornecedor;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 0;

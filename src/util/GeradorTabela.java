@@ -13,6 +13,7 @@ import javax.persistence.Persistence;
  * @author David
  */
 public class GeradorTabela {
+
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Hibernate_AssociacaoPU");
         emf.close();

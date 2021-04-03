@@ -63,28 +63,28 @@ public class ClienteDaoImplTest {
         assertNotNull(clienteSalvo.getId());
         assertNotNull(clienteSalvo.getEndereco());
     }
-    
+
     //@Test
     public void testAlterarCliente() {
         System.out.println("Alterar Cliente");
-        
+
         buscarClienteBd();
-        
+
         cliente.setTelefone(UtilGerador.gerarTelefoneFixo());
         cliente.getEndereco().setCidade(UtilGerador.gerarCidade());
-        
+
         sessao = HibernateUtil.abrirConexao();
-        
+
         clienteDao.salvarOuAlterar(cliente, sessao);
         Cliente clienteAlterado = clienteDao.pesquisarPorId(cliente.getId(), sessao);
-        
+
         sessao.close();
 
-        assertEquals(clienteAlterado.getTelefone(),cliente.getTelefone());
-        assertEquals(clienteAlterado.getEndereco().getCidade(),cliente.getEndereco().getCidade());
+        assertEquals(cliente.getTelefone(),clienteAlterado.getTelefone());
+        assertEquals(cliente.getEndereco().getCidade(),clienteAlterado.getEndereco().getCidade());
     }
-    
-    @Test
+
+    //@Test
     public void testExcluirCliente() {
         System.out.println("Excluir Cliente");
         buscarClienteBd();
@@ -96,7 +96,7 @@ public class ClienteDaoImplTest {
         assertNull(clienteExcluido);
     }
 
-    @Test
+    //@Test
     public void testPesquisarPorNome() {
         System.out.println("pesquisarPorNome");
         buscarClienteBd();
