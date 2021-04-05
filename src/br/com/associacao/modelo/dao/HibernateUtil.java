@@ -37,7 +37,7 @@ public class HibernateUtil {
             cfg.addAnnotatedClass(Fornecedor.class);
         
 
-            cfg.configure("/br/com/associacao/modelo/dao/hibernate.cfg.xml");
+            cfg.configure("/br/com/associacao/dao/hibernate.cfg.xml");
             StandardServiceRegistryBuilder build = new StandardServiceRegistryBuilder().
                                            applySettings(cfg.getProperties());
             sessionFactory = cfg.buildSessionFactory(build.build());
